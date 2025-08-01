@@ -8,75 +8,47 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Volkhov:wght@400;700&display=swap" rel="stylesheet" />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D0KBM95LWZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D0KBM95LWZ');
+</script>
+
   <style>
-    /* =====================================
-       DESIGN TOKENS & RESET
-       ===================================== */
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --icon: #000000;
-      --sidebar-bg: #f2f2f2;
-      --content-fs: 18px;   /* solo cuerpo del artículo */
+    /* ========== TOKENS & RESET ========== */
+    :root{
+      --bg:#fff;--text:#111;--icon:#000;--sidebar-bg:#f2f2f2;--content-fs:18px;
     }
-    .dark{
-      --bg:#121212;
-      --text:#e4e4e4;
-      --icon:#ffffff;
-      --sidebar-bg:#1e1e1e;
-    }
+    .dark{--bg:#121212;--text:#e4e4e4;--icon:#fff;--sidebar-bg:#1e1e1e;}
 
     *{margin:0;padding:0;box-sizing:border-box;}
-
-    body{
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Volkhov",serif;
-      line-height:1.6;
-      min-height:100vh;
-      overflow-x:hidden;
-    }
-
+    body{background:var(--bg);color:var(--text);font-family:"Volkhov",serif;line-height:1.6;min-height:100vh;overflow-x:hidden;}
     a{color:var(--icon);text-decoration:none;}
-
     .menu-font{font-family:"Inter",sans-serif;}
 
-    /* ---------- TOP BAR ---------- */
-    header.topbar{
-      display:flex;align-items:center;gap:1rem;
-      padding:.75rem 1rem;
-    }
-    .icon-btn{
-      background:none;border:none;cursor:pointer;font:inherit;
-      padding:.25rem .5rem;position:relative;color:var(--icon);
-    }
-    .icon-btn::after{
-      content:'';position:absolute;inset:0;border-radius:4px;
-      background:var(--icon);opacity:0;transition:opacity .15s;
-    }
+    /* ========== TOP BAR ========== */
+    header.topbar{display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;}
+    .icon-btn{background:none;border:none;cursor:pointer;font:inherit;padding:.25rem .5rem;position:relative;color:var(--icon);}
+    .icon-btn::after{content:'';position:absolute;inset:0;border-radius:4px;background:var(--icon);opacity:0;transition:opacity .15s;}
     .icon-btn:hover::after{opacity:.12;}
     .ux-controls{margin-left:auto;display:flex;gap:.35rem;}
 
-    /* ---------- SIDEBAR ---------- */
-    .sidebar{
-      position:fixed;inset:0 auto 0 0;
-      width:260px;max-width:80%;
-      background:var(--sidebar-bg);
-      transform:translateX(-100%);
-      transition:transform .3s ease;
-      padding:1rem;z-index:999;overflow-y:auto;
-    }
+    /* ========== SIDEBAR ========== */
+    .sidebar{position:fixed;inset:0 auto 0 0;width:260px;max-width:80%;background:var(--sidebar-bg);transform:translateX(-100%);transition:transform .3s ease;padding:1rem;z-index:999;overflow-y:auto;}
     .sidebar.open{transform:translateX(0);}
     .sidebar h2{font-size:1.1rem;margin-bottom:1rem;color:var(--icon);}
-    .sidebar ul{list-style:none;}
-    .sidebar li{margin:.25rem 0;}
     .sidebar a{display:block;padding:.35rem .5rem;border-radius:4px;transition:background .15s;color:var(--icon);}
+    .sidebar li{margin:.25rem 0;}
     .sidebar a:hover{background:rgba(0,0,0,.08);}
     .dark .sidebar a:hover{background:rgba(255,255,255,.12);}
     .sidebar a.active{text-decoration:underline;text-underline-offset:2px;}
     .close-btn{position:absolute;top:.5rem;right:.5rem;font-size:1.5rem;color:var(--icon);}
 
-    /* ---------- MAIN ---------- */
+    /* ========== MAIN ========== */
     main{max-width:800px;margin:0 auto;padding:2rem 1rem;font-size:var(--content-fs);}
     main h2{margin-bottom:.75rem;font-weight:700;}
     main p{margin-bottom:1rem;text-align:justify;}
@@ -87,14 +59,10 @@
   <!-- TOP BAR -->
   <header class="topbar menu-font">
     <button id="menuToggle" class="icon-btn" aria-label="Open menu">☰</button>
-
     <div class="ux-controls">
-      <!-- letter-soup placeholder -->
-      <button id="cloakToggle" class="icon-btn menu-font" aria-label="Letter soup">🥄</button>
-
+      <button id="cloakToggle" class="icon-btn menu-font" aria-label="Letter soup">🥣</button>
       <button id="fontSmaller" class="icon-btn menu-font" aria-label="Smaller text">A-</button>
       <button id="fontBigger"  class="icon-btn menu-font" aria-label="Bigger text">A+</button>
-
       <button id="themeToggle" class="icon-btn menu-font" aria-label="Toggle theme">☾</button>
       <button id="langToggle"  class="icon-btn menu-font" aria-label="Toggle language">EN</button>
     </div>
@@ -114,202 +82,147 @@
 
   <!-- CONTENT -->
   <main id="content">
-    <article id="chapter-1">
-      <h2>Stuff And Such</h2>
-      <p>I've been thinking about my ex lately. Maybe it's the lack of sex. Sex with her was too good. There were times when I didn’t have to do anything; I just lay there, and she did everything—amazing head, mounting and moving as if we were going to die the next day. I remember the last time we did it. She told me to come and pick up my stuff. She could have done anything with them, but there’s something unspoken in the stuff left behind: you can tell how everything is going to end. She might have said “I got rid of your stuff” or “I’ll send it to you.” Sometimes, the stuff doesn't even survive; it’s lost, forgotten, and not even worth mentioning. Anyhow, she asked me to come and get my stuff. But there were still many things left unsaid, and I had the chance to explain myself. She cried quite a bit. You feel vulnerable when you open up about your emotions, like you’re digging through the guts of the past—the memories, the glances, the moments. When the arguing is finally over, there’s a sense of relief, almost like when you’re on solid ground again after drowning in the open sea; you feel dizzy when you start walking on the sand, unbalanced, but there’s still a void inside. You’ve tasted different types of wine from the cave of emotions: sweet, bitter, sour. I grabbed her by the shoulders, and she rested her head on my chest, gently rubbing my belly. I got a boner and placed her hand down there. She grabbed it firmly. Then I turned her face and kissed her gently on the lips. She kissed me back madly, put her tongue inside my mouth, almost as if she were claiming something. I pulled her hair back and licked her neck. She lay down on the couch immediately and took off her jeans. I rapidly took off my shirt and pulled my pants down to my ankles. With my shoes still on my feet I mounted her. It was the first time we’d done it in the living room. It didn’t last long; it wasn’t spectacular—we only did missionary—but it was good enough to make us both moan, groan, and come. </p>
-      <p>I light a cigarette, open Instagram, and send her a meme. </p>
-      <p>Seen.</p>
-      <p>Now, I wait.</p>
+    <!-- Capítulo 1 EN -->
+    <article data-id="chapter-1" data-lang="en">
+      <h2>Stuff and Such</h2>
+      <p>I’ve been thinking about my ex lately. Maybe it’s the lack of sex. Sex with her was unfairly good. Sometimes I didn’t have to do anything; I just lay there, and she did everything—amazing head, mounting and moving as if we were going to die the next day. I remember the last time we did it. She told me to come and pick up my stuff. She could have done anything with it, but there’s something unspoken in the stuff left behind: you can tell how everything is going to end. She might have said “I got rid of it” or “I’ll send it to you.” Sometimes, the stuff doesn't even survive; it’s lost, forgotten, and not even worth mentioning. Anyhow, she asked me to come and get my stuff. But there were still many things left unsaid, and I had the chance to explain myself. She cried. I wrapped my arms around her, and she rested her head on my chest. You feel vulnerable when you open up about your emotions, like you’re digging through the guts of the past—the memories, the glances, the moments. When the arguing is finally over, there’s a sense of relief, almost like when you’re on solid ground again after drowning in the open sea, but there’s still a void inside. You’ve tasted every bottle in the emotional cellar: sweet, bitter, sour. She softly rubbed my belly. I got hard and placed her hand down there. She grabbed it firmly. I turned her face and kissed her gently on the lips. She kissed me back madly, putting her tongue inside my mouth, almost as if she were claiming something. I pulled her hair back and licked her neck. She pushed me back, lay down on the couch, and slid off her jeans. I immediately took off my shirt and pulled my pants down to my ankles. With my shoes still on my feet, I mounted her. It was the first time we’d done it in the living room. It didn’t last long; it wasn’t spectacular—we only did missionary—but it was good enough to make us both moan, groan, and come. </p>
+      <p>I light a cigarette, open Instagram, and send her a meme.</p>
+      <p><i>Seen.</i></p><p>Now, I wait.</p>
     </article>
 
-    <article id="chapter-2" hidden>
-      <h2>Heading 2</h2>
-      <p>Duis bibendum nisl at mi scelerisque, eget sodales nisl interdum...</p>
-      <p>Praesent non sapien sed nisi imperdiet tempor...</p>
+    <!-- Capítulo 1 ES -->
+    <article data-id="chapter-1" data-lang="es" hidden>
+      <h2>Así las cosas</h2>
+      <p>Últimamente he estado pensando mucho en mi ex. Probablemente sea la falta de sexo, llevo un par de meses sin coger. El sexo con ella era demasiado bueno. En ocasiones yo no tenía que hacer nada, solo me acostaba y ella hacía el resto: sexo oral inolvidable, se montaba y se movía como si no hubiera un mañana. Recuerdo la última vez que lo hicimos. Fue cuando me entregó todas mis cosas. Pude haberlas dejado, pero hay algo implícito en “Ven por tus cosas”, es una forma en la que te das cuenta cómo va a terminar todo. Pudo haberme dicho “Te mando tus cosas” o “Tiré tus cosas”, hay veces en que ‘las cosas’ ni siquiera sobreviven: se pierden, se olvidan o no vale la pena mencionarlas nunca más. En fin, ella me dijo que pasara por ellas. Aún tenía cosas que reclamarme, y yo tuve una oportunidad para explicarme. La sangre efervesce cuando sacas los sentimientos y abres las entrañas del pasado: recuerdos, situaciones, miradas. Has tomado diferentes botellas, sabores dulces, amargos, agrios. Cuando al fin terminas de discutir hay un sentimiento de calma, como cuando sales de nadar en el mar, te sientes un poco mareado y te cuesta trabajo caminar; pero aún queda algo vacío. La abracé y le dije que lo sentía. Recargó su cabeza en mi pecho y acarició mi barriga. Empecé a tener una erección y puse su mano dentro de mi pantalón. La tomé del mentón, y ella empezó a besarme casi de forma agresiva, no era un beso tierno, ni amoroso, era como si buscara algo que le pertenecía, como un reclamo. La tomé del cabello, eché su cabeza hacia atrás y le lamí el cuello. Me empujó y se acostó mientras se quitaba los jeans. Era la primera vez que lo hacíamos en el sofá de la sala. No duró mucho, sólo hicimos el misionero, pero fue suficiente para hacernos gritar de excitación.</p>
+      <p>Prendo un cigarrillo. Abro Instagram. Le envío un meme.</p>
+      <p><i>Seen.</i></p><p>Ahora sólo tengo que esperar.</p>
+    </article>
+
+    <!-- Capítulo 2 EN (ES se añadirá después) -->
+    <article data-id="chapter-2" data-lang="en" hidden>
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet, probo petentium quaerendum ne sit, pericula adolescens has te. Qui aeque repudiandae dissentiunt et, te habeo patrioque maiestatis nam. Sanctus conclusionemque sit ut, quando fastidii splendide et his. Nec te utamur equidem inimicus. Sanctus antiopam pericula in mea, euismod blandit per te. Choro quando graeci ut nec, persius euripidis vituperata cu usu.</p>
+      <p>Pri utamur intellegam no. Aperiri adipisci necessitatibus in nec, at vis vidisse appetere facilisis, quo cibo numquam in. Vel cu docendi omnesque, id mei alterum delicata. Ponderum efficiantur liberavisse mel cu, usu dicta sententiae ut. Ea quo populo ceteros adipiscing, suas facilis deserunt mei ut, cu erant dolore postulant qui. Quo vide iudicabit adolescens ne, no modus dolorum salutatus est.</p>
+      <p>Duo cu nobis vocibus eloquentiam, at vide liber eos, at duo mentitum urbanitas dissentiunt. Suas forensibus et pri, has in nostrum reprehendunt. Sea fabulas facilisi eu, ex iusto facete vix. An praesent posidonium vel.</p>
+      <p>Qui ad choro iracundia inciderint, est cu ullum alterum intellegam. In mel utamur inermis. Et vel mazim percipit indoctum, mel assum tritani fabellas ut. Est ludus dicam no, ad meliore apeirian usu.</p>
     </article>
   </main>
 
   <!-- SCRIPT -->
   <script>
-    /* ---------- SIDEBAR ---------- */
-    const sidebar = document.getElementById('sidebar');
-    const menuToggle = document.getElementById('menuToggle');
-    const closeSidebar = document.getElementById('closeSidebar');
-    const openMenu = () => { sidebar.classList.add('open'); sidebar.setAttribute('aria-hidden','false'); };
-    const closeMenu= () => { sidebar.classList.remove('open'); sidebar.setAttribute('aria-hidden','true'); };
-    menuToggle.addEventListener('click',openMenu);
-    closeSidebar.addEventListener('click',closeMenu);
+  /* ===== SIDEBAR ===== */
+  const sidebar = document.getElementById('sidebar');
+  document.getElementById('menuToggle').onclick  = () => {sidebar.classList.add('open');};
+  document.getElementById('closeSidebar').onclick = () => {sidebar.classList.remove('open');};
 
-    /* ---------- CHAPTER SWITCH ---------- */
-    const chapterLinks=[...document.querySelectorAll('#chapterList a')];
-    const articles=[...document.querySelectorAll('main article')];
-    chapterLinks.forEach(link=>{
-      link.addEventListener('click',e=>{
-        e.preventDefault();
-        const id=link.dataset.id;
-        articles.forEach(a=>a.hidden=a.id!==id);
-        chapterLinks.forEach(l=>l.classList.toggle('active',l===link));
-        closeMenu();
-      });
+  /* ===== CHAPTER / LANGUAGE STATE ===== */
+  let currentChapter = 'chapter-1';
+  let lang          = localStorage.getItem('lang') || 'en';
+
+  const chapterLinks = [...document.querySelectorAll('#chapterList a')];
+  function showArticle(){
+    document.querySelectorAll('main article').forEach(a=>{
+      a.hidden = !(a.dataset.id===currentChapter && a.dataset.lang===lang);
     });
-
-    /* ---------- FONT SIZE ---------- */
-    const fontSmaller=document.getElementById('fontSmaller');
-    const fontBigger=document.getElementById('fontBigger');
-    const MIN=14,MAX=24,STEP=2;
-    function updateFont(delta){
-      const root=document.documentElement;
-      const current=parseInt(getComputedStyle(root).getPropertyValue('--content-fs'));
-      const next=Math.min(MAX,Math.max(MIN,current+delta));
-      root.style.setProperty('--content-fs',next+'px');
-      localStorage.setItem('contentFS',next);
-    }
-    fontSmaller.addEventListener('click',()=>updateFont(-STEP));
-    fontBigger.addEventListener('click',()=>updateFont(STEP));
-    const savedFS=+localStorage.getItem('contentFS');
-    if(savedFS) document.documentElement.style.setProperty('--content-fs',savedFS+'px');
-
-    /* ---------- THEME ---------- */
-    const themeToggle=document.getElementById('themeToggle');
-    const MOON='☾', SUN='☀';
-    if(localStorage.getItem('prefDark')==='true'){
-      document.body.classList.add('dark');
-      themeToggle.textContent=SUN;
-    }
-    themeToggle.addEventListener('click',()=>{
-      const dark=document.body.classList.toggle('dark');
-      localStorage.setItem('prefDark',dark);
-      themeToggle.textContent=dark?SUN:MOON;
-    });
-
-/* ---------- LETTER-SOUP EFFECT v3 (rebote continuo) ---------- */
-const cloakToggle = document.getElementById('cloakToggle');
-let cloaked = false, clones = [], rafId = null;
-
-const SPEED = 90;           // px por segundo (ajusta a tu gusto)
-
-cloakToggle.addEventListener('click', () => {
-  cloaked ? restore() : explode();
-  cloaked = !cloaked;
-});
-
-/* crea spans, les da velocidad y arranca el loop ------------- */
-function explode() {
-  const article = document.querySelector('main article:not([hidden])');
-  if (!article) return;
-
-  if (!article.dataset.origHTML) article.dataset.origHTML = article.innerHTML;
-
-  // 1. envuelve letras (igual que antes)
-  article.innerHTML = Array.from(article.innerText).map(ch => {
-    if (ch === '\n') return '<br>';
-    if (/\s/.test(ch)) return ch;
-    return `<span class="fly">${ch}</span>`;
-  }).join('');
-
-  const spans = [...article.querySelectorAll('span.fly')];
-  const rects = spans.map(s => s.getBoundingClientRect()); // 2. medir con el artículo visible
-
-  article.style.visibility = 'hidden';                     // 3. ahora sí lo ocultamos
-
-  clones = spans.map((s, i) => {
-    const {left:x, top:y, width:w, height:h} = rects[i];
-    const node = s.cloneNode(true);
-    Object.assign(node.style,{
-      position:'fixed',left:`${x}px`,top:`${y}px`,
-      font:'inherit',color:'inherit'
-    });
-    document.body.appendChild(node);
-    const a = Math.random()*Math.PI*2;
-    return {node, x, y, w, h, vx:Math.cos(a)*SPEED, vy:Math.sin(a)*SPEED, ox:x, oy:y};
-  });
-
-  runLoop(performance.now());
-}
-
-function restore(){
-  if (!clones.length) return;                              // evita TypeError
-
-  cancelAnimationFrame(rafId);
-  clones.forEach(c=>{
-    c.node.style.transition='transform .5s ease';
-    c.node.style.transform='translate(0,0)';
-  });
-
-  clones[0].node.addEventListener('transitionend', () => {
-    clones.forEach(c=>c.node.remove());
-    clones = [];
-    const article = document.querySelector('main article:not([hidden])');
-    if (article){
-      article.style.visibility = '';
-      article.innerHTML = article.dataset.origHTML;
-    }
-  }, {once:true});
-}
-
-
-/* animación frame-a-frame con rebote ------------------------- */
-function runLoop(prev) {
-  rafId = requestAnimationFrame(now => {
-    const dt = (now - prev)/1000;          // segundos desde el frame anterior
-    const vw = innerWidth, vh = innerHeight;
-
-    clones.forEach(c => {
-      c.x += c.vx * dt;
-      c.y += c.vy * dt;
-
-      // rebote en bordes
-      if (c.x <= 0 || c.x + c.w >= vw){ c.vx *= -1; c.x = Math.max(0, Math.min(c.x, vw-c.w)); }
-      if (c.y <= 0 || c.y + c.h >= vh){ c.vy *= -1; c.y = Math.max(0, Math.min(c.y, vh-c.h)); }
-
-      c.node.style.transform = `translate(${c.x-c.ox}px, ${c.y-c.oy}px)`;
-    });
-
-    runLoop(now);
-  });
-}
-
-/* vuelve a la posición original y limpia --------------------- */
-function restore(){
-  cancelAnimationFrame(rafId);
-  clones.forEach(c=>{
-    c.node.style.transition='transform .5s ease';
-    c.node.style.transform='translate(0,0)';
-  });
-
-  // cuando el primer clon termina la transición, limpiamos
-  clones[0].node.addEventListener('transitionend', () => {
-    clones.forEach(c=>c.node.remove());
-    clones = [];
-    const article = document.querySelector('main article:not([hidden])');
-    if(article){
-      article.style.visibility='';
-      article.innerHTML = article.dataset.origHTML;
-    }
-  }, {once:true});
-}
-
-    /* ---------- LANGUAGE (UI labels) ---------- */
-    const langToggle=document.getElementById('langToggle');
-    const strings={
-      en:{menuTitle:'Late night intrusive thoughts',chapter1:'Chapter 1',chapter2:'Chapter 2',LANG:'EN'},
-      es:{menuTitle:'Pensamientos intrusivos de madrugada',chapter1:'Capítulo 1',chapter2:'Capítulo 2',LANG:'ES'}
+  }
+  chapterLinks.forEach(link=>{
+    link.onclick = e=>{
+      e.preventDefault();
+      currentChapter = link.dataset.id;
+      chapterLinks.forEach(l=>l.classList.toggle('active',l===link));
+      showArticle();
+      sidebar.classList.remove('open');
     };
-    let lang=localStorage.getItem('lang')||'en';
-    function translate(){
-      const dict=strings[lang];
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const k=el.dataset.i18n;
-        if(dict[k]) el.textContent=dict[k];
-      });
-      langToggle.textContent=dict.LANG;
-    }
-    langToggle.addEventListener('click',()=>{
-      lang=lang==='en'?'es':'en';
-      localStorage.setItem('lang',lang);
-      translate();
+  });
+
+  /* ===== FONT SIZE ===== */
+  const MIN=14,MAX=24,STEP=2;
+  const root=document.documentElement;
+  document.getElementById('fontSmaller').onclick=()=>resize(-STEP);
+  document.getElementById('fontBigger').onclick =()=>resize( STEP);
+  function resize(d){
+    const cur=parseInt(getComputedStyle(root).getPropertyValue('--content-fs'));
+    const next=Math.min(MAX,Math.max(MIN,cur+d));
+    root.style.setProperty('--content-fs',next+'px');
+    localStorage.setItem('contentFS',next);
+  }
+  const saved=+localStorage.getItem('contentFS'); if(saved) root.style.setProperty('--content-fs',saved+'px');
+
+  /* ===== THEME ===== */
+  const themeBtn=document.getElementById('themeToggle'), MOON='☾',SUN='☀';
+  if(localStorage.getItem('prefDark')==='true'){document.body.classList.add('dark');themeBtn.textContent=SUN;}
+  themeBtn.onclick=()=>{
+    const d=document.body.classList.toggle('dark');
+    localStorage.setItem('prefDark',d); themeBtn.textContent=d?SUN:MOON;
+  };
+
+  /* ===== UI LANGUAGE (labels) ===== */
+  const langBtn=document.getElementById('langToggle');
+  const strings={
+    en:{menuTitle:'Late night intrusive thoughts',chapter1:'Chapter 1',chapter2:'Chapter 2',LANG:'EN'},
+    es:{menuTitle:'Pensamientos intrusivos de madrugada',chapter1:'Capítulo 1',chapter2:'Capítulo 2',LANG:'ES'}
+  };
+  function translate(){
+    const dict=strings[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el=>{ el.textContent=dict[el.dataset.i18n]; });
+    langBtn.textContent=dict.LANG;
+  }
+  langBtn.onclick=()=>{ lang = lang==='en'?'es':'en'; localStorage.setItem('lang',lang); translate(); showArticle(); };
+
+  /* ===== LETTER-SOUP EFFECT ===== */
+  const cloakBtn=document.getElementById('cloakToggle'), SPEED=90;
+  let cloaked=false,clones=[],rafId=null;
+
+  cloakBtn.onclick=()=>{ cloaked ? restore() : explode(); cloaked=!cloaked; };
+
+  function explode(){
+    const art=document.querySelector('main article:not([hidden])'); if(!art||!art.innerText.trim())return;
+    if(!art.dataset.origHtml) art.dataset.origHtml=art.innerHTML;
+
+    art.innerHTML = Array.from(art.innerText).map(ch=>{
+      if(ch==='\\n') return '<br>'; if(/\\s/.test(ch)) return ch;
+      return `<span class=\"fly\">${ch}</span>`;
+    }).join('');
+
+    const spans=[...art.querySelectorAll('span.fly')];
+    const rects=spans.map(s=>s.getBoundingClientRect());
+    art.style.visibility='hidden';
+
+    clones=spans.map((s,i)=>{
+      const {left:x,top:y,width:w,height:h}=rects[i];
+      const node=s.cloneNode(true);
+      Object.assign(node.style,{position:'fixed',left:`${x}px`,top:`${y}px`,font:'inherit',color:'inherit',pointerEvents:'none'});
+      document.body.appendChild(node);
+      const ang=Math.random()*Math.PI*2;
+      return{node,x,y,w,h,vx:Math.cos(ang)*SPEED,vy:Math.sin(ang)*SPEED,ox:x,oy:y};
     });
-    translate();
+    tick(performance.now());
+  }
+  function tick(prev){
+    rafId=requestAnimationFrame(now=>{
+      const dt=(now-prev)/1000,vw=innerWidth,vh=innerHeight;
+      clones.forEach(c=>{
+        c.x+=c.vx*dt; c.y+=c.vy*dt;
+        if(c.x<=0||c.x+c.w>=vw){c.vx*=-1;c.x=Math.max(0,Math.min(c.x,vw-c.w));}
+        if(c.y<=0||c.y+c.h>=vh){c.vy*=-1;c.y=Math.max(0,Math.min(c.y,vh-c.h));}
+        c.node.style.transform=`translate(${c.x-c.ox}px,${c.y-c.oy}px)`;
+      });
+      tick(now);
+    });
+  }
+  function restore(){
+    if(!clones.length) return;
+    cancelAnimationFrame(rafId);
+    clones.forEach(c=>{c.node.style.transition='transform .5s ease';c.node.style.transform='translate(0,0)';});
+    clones[0].node.addEventListener('transitionend',()=>{
+      clones.forEach(c=>c.node.remove()); clones=[];
+      const art=document.querySelector('main article:not([hidden])');
+      if(art){art.style.visibility=''; art.innerHTML=art.dataset.origHtml;}
+    },{once:true});
+  }
+
+  /* ===== INIT ===== */
+  translate(); showArticle();
   </script>
 </body>
 </html>
