@@ -31,18 +31,25 @@
     .menu-font{font-family:"Inter",sans-serif;}
 
     /* ========== TOP BAR ========== */
-    header.topbar{display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;}
+    header.topbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background:var(--bg);
+    display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;}
     .icon-btn{background:none;border:none;cursor:pointer;font:inherit;padding:.25rem .5rem;position:relative;color:var(--icon);}
     .icon-btn::after{content:'';position:absolute;inset:0;border-radius:4px;background:var(--icon);opacity:0;transition:opacity .15s;}
     .icon-btn:hover::after{opacity:.12;}
     .ux-controls{margin-left:auto;display:flex;gap:.35rem;}
 
     /* ========== SIDEBAR ========== */
-    .sidebar{position:fixed;inset:0 auto 0 0;width:260px;max-width:80%;background:var(--sidebar-bg);transform:translateX(-100%);transition:transform .3s ease;padding:1rem;z-index:999;overflow-y:auto;}
+    .sidebar{position:fixed;inset:0 auto 0 0;width:260px;max-width:80%;background:var(--sidebar-bg);transform:translateX(-100%);transition:transform .3s ease;padding:1rem;z-index:1001;overflow-y:auto;}
     .sidebar.open{transform:translateX(0);}
     .sidebar h2{font-size:1.1rem;margin-bottom:1rem;color:var(--icon);}
     .sidebar a{display:block;padding:.35rem .5rem;border-radius:4px;transition:background .15s;color:var(--icon);}
-    .sidebar li{margin:.25rem 0;}
+    .sidebar li{margin:.25rem 0;
+    list-style: none;
+    }
     .sidebar a:hover{background:rgba(0,0,0,.08);}
     .dark .sidebar a:hover{background:rgba(255,255,255,.12);}
     .sidebar a.active{text-decoration:underline;text-underline-offset:2px;}
@@ -71,11 +78,11 @@
   <!-- SIDEBAR -->
   <aside id="sidebar" class="sidebar" aria-hidden="true">
     <button id="closeSidebar" class="icon-btn close-btn" aria-label="Close menu">×</button>
-    <h2 class="menu-font" data-i18n="menuTitle">Late night intrusive thoughts</h2>
+    <h2 class="menu-font" data-i18n="menuTitle">Late Night Intrusive Thoughts</h2>
     <nav>
       <ul id="chapterList">
-        <li><a href="#" data-id="chapter-1" class="menu-font active" data-i18n="chapter1">Chapter 1</a></li>
-        <li><a href="#" data-id="chapter-2" class="menu-font" data-i18n="chapter2">Chapter 2</a></li>
+        <li><a href="#" data-id="chapter-1" class="menu-font active" data-i18n="chapter1">Episode 1</a></li>
+        <li><a href="#" data-id="chapter-2" class="menu-font" data-i18n="chapter2">Episode 2</a></li>
       </ul>
     </nav>
   </aside>
@@ -85,17 +92,17 @@
     <!-- Capítulo 1 EN -->
     <article data-id="chapter-1" data-lang="en">
       <h2>Stuff and Such</h2>
-      <p>I’ve been thinking about my ex lately. Maybe it’s the lack of sex. Sex with her was unfairly good. Sometimes I didn’t have to do anything; I just lay there, and she did everything—amazing head, mounting and moving as if we were going to die the next day. I remember the last time we did it. She told me to come and pick up my stuff. She could have done anything with it, but there’s something unspoken in the stuff left behind: you can tell how everything is going to end. She might have said “I got rid of it” or “I’ll send it to you.” Sometimes, the stuff doesn't even survive; it’s lost, forgotten, and not even worth mentioning. Anyhow, she asked me to come and get my stuff. But there were still many things left unsaid, and I had the chance to explain myself. She cried. I wrapped my arms around her, and she rested her head on my chest. You feel vulnerable when you open up about your emotions, like you’re digging through the guts of the past—the memories, the glances, the moments. When the arguing is finally over, there’s a sense of relief, almost like when you’re on solid ground again after drowning in the open sea, but there’s still a void inside. You’ve tasted every bottle in the emotional cellar: sweet, bitter, sour. She softly rubbed my belly. I got hard and placed her hand down there. She grabbed it firmly. I turned her face and kissed her gently on the lips. She kissed me back madly, putting her tongue inside my mouth, almost as if she were claiming something. I pulled her hair back and licked her neck. She pushed me back, lay down on the couch, and slid off her jeans. I immediately took off my shirt and pulled my pants down to my ankles. With my shoes still on my feet, I mounted her. It was the first time we’d done it in the living room. It didn’t last long; it wasn’t spectacular—we only did missionary—but it was good enough to make us both moan, groan, and come. </p>
+      <p>I’ve been thinking about my ex lately. Maybe it’s the lack of sex. Sex with her was unfairly good. Sometimes I didn’t have to do anything; I just lay there, and she did everything—amazing head, mounting and moving as if we were going to die the next day. I remember the last time we did it. She told me to come and pick up my stuff. She could have done anything with it, but there’s something unspoken in the stuff left behind: you can tell how everything is going to end. She might have said “I got rid of it” or “I’ll send it to you.” Sometimes, the stuff doesn't even survive; it’s lost, forgotten, and not even worth mentioning. Anyhow, she asked me to come and get my stuff. But there were still many things left unsaid, and I had the chance to explain myself. She cried. I wrapped my arms around her, and she rested her head on my chest. You feel vulnerable when you open up about your emotions, like you’re digging through the guts of the past—the memories, the glances, the moments. When the arguing is finally over, there’s a sense of relief, almost like when you’re on solid ground again after drowning in the open sea, but there’s still a void inside. You’ve tasted every bottle in the emotional cellar: sweet, bitter, sour. She softly rubbed my belly. I got hard and placed her hand down there. She grabbed it firmly. I turned her face and kissed her gently on the lips. She kissed me back madly, putting her tongue inside my mouth, almost as if she were claiming something. I pulled her hair back and licked her neck. She pushed me back, lay down on the couch, and slid off her jeans. I immediately took off my shirt and pulled my pants down to my ankles. With my shoes still on my feet, I mounted her. It was the first time we’d done it in the living room. It didn’t last long; it wasn’t spectacular—we only did missionary—but it was good enough to make us both moan, groan, and come.</p>
       <p>I light a cigarette, open Instagram, and send her a meme.</p>
-      <p><i>Seen.</i></p><p>Now, I wait.</p>
+      <p><i>Seen just now.</i></p><p>Now, I wait.</p>
     </article>
 
     <!-- Capítulo 1 ES -->
     <article data-id="chapter-1" data-lang="es" hidden>
       <h2>Así las cosas</h2>
-      <p>Últimamente he estado pensando mucho en mi ex. Probablemente sea la falta de sexo, llevo un par de meses sin coger. El sexo con ella era demasiado bueno. En ocasiones yo no tenía que hacer nada, solo me acostaba y ella hacía el resto: sexo oral inolvidable, se montaba y se movía como si no hubiera un mañana. Recuerdo la última vez que lo hicimos. Fue cuando me entregó todas mis cosas. Pude haberlas dejado, pero hay algo implícito en “Ven por tus cosas”, es una forma en la que te das cuenta cómo va a terminar todo. Pudo haberme dicho “Te mando tus cosas” o “Tiré tus cosas”, hay veces en que ‘las cosas’ ni siquiera sobreviven: se pierden, se olvidan o no vale la pena mencionarlas nunca más. En fin, ella me dijo que pasara por ellas. Aún tenía cosas que reclamarme, y yo tuve una oportunidad para explicarme. La sangre efervesce cuando sacas los sentimientos y abres las entrañas del pasado: recuerdos, situaciones, miradas. Has tomado diferentes botellas, sabores dulces, amargos, agrios. Cuando al fin terminas de discutir hay un sentimiento de calma, como cuando sales de nadar en el mar, te sientes un poco mareado y te cuesta trabajo caminar; pero aún queda algo vacío. La abracé y le dije que lo sentía. Recargó su cabeza en mi pecho y acarició mi barriga. Empecé a tener una erección y puse su mano dentro de mi pantalón. La tomé del mentón, y ella empezó a besarme casi de forma agresiva, no era un beso tierno, ni amoroso, era como si buscara algo que le pertenecía, como un reclamo. La tomé del cabello, eché su cabeza hacia atrás y le lamí el cuello. Me empujó y se acostó mientras se quitaba los jeans. Era la primera vez que lo hacíamos en el sofá de la sala. No duró mucho, sólo hicimos el misionero, pero fue suficiente para hacernos gritar de excitación.</p>
+      <p>Últimamente he estado pensando mucho en mi ex. Probablemente sea la falta de sexo, llevo un par de meses sin coger. El sexo con ella era demasiado bueno. En ocasiones yo no tenía que hacer nada, solo me acostaba y ella hacía el resto: sexo oral inolvidable, se montaba y se movía como si no hubiera un mañana. Recuerdo la última vez que lo hicimos. Fue cuando me entregó todas mis cosas. Pude haberlas dejado, pero hay algo implícito en “Ven por tus cosas”, es una forma en la que te das cuenta cómo va a terminar todo. Pudo haberme dicho “Te mando tus cosas” o “Tiré tus cosas”, hay veces en que las cosas ni siquiera sobreviven: se pierden, se olvidan o no vale la pena mencionarlas nunca más. En fin, ella me dijo que pasara por ellas. Aún tenía cosas que reclamarme, y yo tuve una oportunidad para explicarme. La sangre efervesce cuando sacas los sentimientos y abres las entrañas del pasado: recuerdos, situaciones, miradas. Has tomado diferentes botellas, sabores dulces, amargos, agrios. Cuando al fin terminas de discutir hay un sentimiento de calma, como cuando sales de nadar en el mar, te sientes un poco mareado y te cuesta trabajo caminar; pero aún queda algo vacío. La abracé y le dije que lo sentía. Recargó su cabeza en mi pecho y acarició mi barriga, creo que estaba llorando. Empecé a tener una erección y puse su mano dentro de mi pantalón. La tomé del mentón, y ella empezó a besarme casi de forma agresiva, no era un beso apasionado, ni amoroso, era como si buscara algo que le pertenecía, como un reclamo. La tomé del cabello, eché su cabeza hacia atrás y le lamí el cuello. Me empujó y se acostó mientras se quitaba los jeans. Era la primera vez que lo hacíamos en el sofá de la sala. No duró mucho, sólo hicimos el misionero, pero fue suficiente para hacernos gritar y venir.</p>
       <p>Prendo un cigarrillo. Abro Instagram. Le envío un meme.</p>
-      <p><i>Seen.</i></p><p>Ahora sólo tengo que esperar.</p>
+      <p><i>Visto hace un momento.</i></p><p>Ahora sólo tengo que esperar.</p>
     </article>
 
     <!-- Capítulo 2 EN (ES se añadirá después) -->
@@ -159,8 +166,8 @@
   /* ===== UI LANGUAGE (labels) ===== */
   const langBtn=document.getElementById('langToggle');
   const strings={
-    en:{menuTitle:'Late night intrusive thoughts',chapter1:'Chapter 1',chapter2:'Chapter 2',LANG:'EN'},
-    es:{menuTitle:'Pensamientos intrusivos de madrugada',chapter1:'Capítulo 1',chapter2:'Capítulo 2',LANG:'ES'}
+    en:{menuTitle:'Late Night Intrusive Thoughts:',chapter1:'Episode 1',chapter2:'Episode 2',LANG:'EN'},
+    es:{menuTitle:'Pensamientos Intrusivos',chapter1:'Episodio 1',chapter2:'Episodio 2',LANG:'ES'}
   };
   function translate(){
     const dict=strings[lang];
